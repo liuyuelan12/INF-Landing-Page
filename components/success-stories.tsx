@@ -22,12 +22,12 @@ export default function SuccessStories() {
       {/* Bottom Section with White Background */}
       <div className="bg-white py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 gap-16 relative min-h-[700px]">
+          <div className="md:grid md:grid-cols-2 md:gap-16 relative md:min-h-[700px]">
             {/* Vertical Divider between left and right */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-300 transform -translate-x-1/2"></div>
+            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-300 transform -translate-x-1/2 md:block hidden"></div>
 
             {/* Left Side - Conference Photos */}
-            <div className="space-y-8">
+            <div className="space-y-8 md:block hidden">
               <div className="relative">
                 <Image
                   src="/images/conference-photo-1.png"
@@ -50,7 +50,7 @@ export default function SuccessStories() {
             </div>
 
             {/* Right Side - Content split into two equal parts */}
-            <div className="flex flex-col h-full">
+            <div className="flex flex-col h-full md:block hidden">
               {/* Investment Results Section - Top Half */}
               <div className="flex-1 flex flex-col justify-center space-y-6 py-8">
                 <div className="space-y-4">
@@ -91,6 +91,78 @@ export default function SuccessStories() {
                   <p className="text-lg">AI Model Marketplaces</p>
                   <p className="text-lg">Privacy-Preserving Machine Learning</p>
                   <p className="text-lg">Federated Learning Networks</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile Layout - Full Width */}
+            <div className="block md:hidden col-span-2">
+              {/* Remove this entire red header section since it's already shown above */}
+              {/* 
+              <div className="bg-red-600 text-white p-6 -mx-4 mb-6">
+                <h2 className="text-xl font-light mb-4">Success Stories</h2>
+                <h3 className="text-2xl font-bold leading-tight">
+                  Hopper - Multi-chain
+                  <br />
+                  Decentralized
+                  <br />
+                  Trading Platform
+                </h3>
+              </div>
+              */}
+
+              {/* Conference Photo - Full Width */}
+              <div className="mb-8 -mx-4 px-4">
+                <div className="relative">
+                  <Image
+                    src="/images/conference-photo-1.png"
+                    alt="Conference presentation with large audience"
+                    width={500}
+                    height={300}
+                    className="w-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Investment Results Section */}
+              <div className="mb-8">
+                <div className="flex items-start space-x-4 mb-6">
+                  <Image
+                    src="/images/globe-wireframe.png"
+                    alt="Globe wireframe icon"
+                    width={60}
+                    height={60}
+                    className="object-contain mt-2 flex-shrink-0"
+                  />
+                  <div className="flex-1">
+                    <h4 className="text-red-600 text-xl font-bold mb-4">Investment Results</h4>
+                    <div className="space-y-3 text-gray-700">
+                      <p className="text-base font-medium">Successfully raised $1.7 million in seed funding</p>
+                      <p className="text-base">Solid initial capital supporting project development</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Project Highlights Section */}
+              <div className="mb-8">
+                <div className="flex items-start space-x-4">
+                  <Image
+                    src="/images/red-oval-design.png"
+                    alt="Red oval design icon"
+                    width={60}
+                    height={60}
+                    className="object-contain mt-2 flex-shrink-0"
+                  />
+                  <div className="flex-1">
+                    <h4 className="text-red-600 text-xl font-bold mb-4">Project Highlights</h4>
+                    <div className="space-y-3 text-gray-700">
+                      <p className="text-base">Advanced MPC Wallet Technology with 99.99% Security Score</p>
+                      <p className="text-base">AI Model Marketplaces</p>
+                      <p className="text-base">Privacy-Preserving Machine Learning</p>
+                      <p className="text-base">Federated Learning Networks</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

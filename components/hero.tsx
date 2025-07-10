@@ -19,8 +19,8 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center lg:items-end min-h-[600px] md:min-h-[800px] lg:min-h-[1000px] pb-12 md:pb-24 lg:pb-48">
-        {/* Left Content */}
-        <div className="max-w-2xl text-center lg:text-left">
+        {/* Left Content - Moved down on mobile and tablet */}
+        <div className="max-w-2xl text-center lg:text-left mt-20 sm:mt-32 md:mt-40 lg:mt-0">
           <h1
             className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight mb-4"
             style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5), 1px 1px 2px rgba(0,0,0,0.3)" }}
@@ -38,21 +38,21 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <Button
               size="lg"
-              className="bg-red-600 hover:bg-red-700 text-white px-6 md:px-8 py-3 text-sm md:text-base font-semibold"
+              className="bg-red-600 hover:bg-red-700 text-white px-6 md:px-8 py-3 text-sm md:text-base font-semibold w-full sm:w-auto"
             >
               Apply for Funding
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-6 md:px-8 py-3 text-sm md:text-base font-semibold bg-transparent"
+              className="border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-6 md:px-8 py-3 text-sm md:text-base font-semibold bg-transparent w-full sm:w-auto"
             >
               Explore Portfolio
             </Button>
           </div>
         </div>
 
-        {/* Right Content - Hidden on mobile */}
+        {/* Right Content - Hidden on mobile and tablet */}
         <div className="hidden lg:flex flex-col items-end text-sm text-white/80 mt-8 lg:mt-0">
           <span className="hover:text-white cursor-pointer transition-colors mb-1">Join Investor Network</span>
           <span className="text-white/60">|</span>

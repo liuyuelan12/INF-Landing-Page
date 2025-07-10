@@ -138,110 +138,65 @@ export default function InvestmentSectors() {
   }
 
   return (
-    <section className="relative py-32 min-h-[900px] bg-white">
+    <section className="relative py-16 md:py-32 min-h-[900px] bg-white">
       {/* Gray Divider */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gray-300"></div>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative">
-        {/* Vertical divider connecting the two horizontal dividers */}
-        <div
-          className="absolute left-[80%] w-px bg-gray-300"
-          style={{ top: "-128px", height: "calc(82.5% - 24px)" }}
-        ></div>
-
-        {/* Top Section */}
-        <div className="grid grid-cols-2 gap-16 items-start mb-16">
-          {/* Left side - Title and Description */}
-          <div className="space-y-6">
-            <div className="flex items-center space-x-4 mb-8">
+        {/* Mobile Layout */}
+        <div className="block md:hidden">
+          {/* Header */}
+          <div className="mb-8">
+            <div className="flex items-start space-x-4 mb-6">
               <Image
                 src="/images/wireframe-funnel.png"
                 alt="Wireframe funnel"
-                width={80}
-                height={120}
-                className="opacity-80"
+                width={60}
+                height={90}
+                className="opacity-80 mt-2"
               />
-            </div>
-
-            <h2 className="text-[#13325E] text-5xl font-black">Investment Sectors</h2>
-
-            <p className="text-gray-600 text-lg leading-relaxed">
-              We focus on the most promising innovation directions in the Web3 space and make deep investments in the
-              following tracks. Our thesis-driven approach combines rigorous due diligence with forward-looking market
-              analysis.
-            </p>
-          </div>
-
-          {/* Right side - Investment Focus Areas */}
-          <div className="flex justify-end">
-            <div className="space-y-6 text-left -ml-24">
-              <div className="space-y-8">
-                <div
-                  className={`flex items-center space-x-4 px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer ${hoveredSector === "AI + Web3" ? "bg-gradient-to-r from-blue-100 to-white" : ""} hover:bg-gradient-to-r hover:from-blue-100 hover:to-white`}
-                  onMouseEnter={() => setHoveredSector("AI + Web3")}
-                >
-                  <div className="w-3 h-3 bg-red-600 rounded-full"></div>
-                  <span className="text-gray-800 text-xl font-medium">AI + Web3</span>
-                </div>
-
-                <div
-                  className={`flex items-center space-x-4 px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer ${hoveredSector === "CEX Ecosystem" ? "bg-gradient-to-r from-blue-100 to-white" : ""} hover:bg-gradient-to-r hover:from-blue-100 hover:to-white`}
-                  onMouseEnter={() => setHoveredSector("CEX Ecosystem")}
-                >
-                  <div className="w-3 h-3 bg-[#13325E] rounded-full"></div>
-                  <span className="text-gray-800 text-xl font-medium">CEX Ecosystem</span>
-                </div>
-
-                <div
-                  className={`flex items-center space-x-4 px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer ${hoveredSector === "DePIN Infrastructure" ? "bg-gradient-to-r from-blue-100 to-white" : ""} hover:bg-gradient-to-r hover:from-blue-100 hover:to-white`}
-                  onMouseEnter={() => setHoveredSector("DePIN Infrastructure")}
-                >
-                  <div className="w-3 h-3 bg-[#13325E] rounded-full"></div>
-                  <span className="text-gray-800 text-xl font-medium">DePIN Infrastructure</span>
-                </div>
-
-                <div
-                  className={`flex items-center space-x-4 px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer ${hoveredSector === "DeFi Innovation" ? "bg-gradient-to-r from-blue-100 to-white" : ""} hover:bg-gradient-to-r hover:from-blue-100 hover:to-white`}
-                  onMouseEnter={() => setHoveredSector("DeFi Innovation")}
-                >
-                  <div className="w-3 h-3 bg-[#13325E] rounded-full"></div>
-                  <span className="text-gray-800 text-xl font-medium">DeFi Innovation</span>
-                </div>
-
-                <div
-                  className={`flex items-center space-x-4 px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer ${hoveredSector === "GameFi & NFT" ? "bg-gradient-to-r from-blue-100 to-white" : ""} hover:bg-gradient-to-r hover:from-blue-100 hover:to-white`}
-                  onMouseEnter={() => setHoveredSector("GameFi & NFT")}
-                >
-                  <div className="w-3 h-3 bg-[#13325E] rounded-full"></div>
-                  <span className="text-gray-800 text-xl font-medium">GameFi & NFT</span>
-                </div>
+              <div className="flex-1">
+                <h2 className="text-[#13325E] text-3xl font-black mb-4">Investment Sectors</h2>
+                <p className="text-gray-600 text-base leading-relaxed">
+                  We focus on the most promising innovation directions in the Web3 space and make deep investments in
+                  the following tracks. Our thesis-driven approach combines rigorous due diligence with forward-looking
+                  market analysis.
+                </p>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Gray Divider before bottom section - no margin bottom */}
-        <div className="w-full h-px bg-gray-300"></div>
+          {/* Investment Focus Areas - Mobile List */}
+          <div className="bg-gray-50 rounded-lg p-6 mb-8">
+            <div className="space-y-4">
+              {Object.keys(sectorContent).map((sector, index) => (
+                <div
+                  key={sector}
+                  className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-300 cursor-pointer ${
+                    hoveredSector === sector ? "bg-gradient-to-r from-blue-100 to-white shadow-sm" : "hover:bg-white/50"
+                  }`}
+                  onClick={() => setHoveredSector(sector)}
+                >
+                  <div className={`w-2 h-2 rounded-full ${index === 0 ? "bg-red-600" : "bg-[#13325E]"}`}></div>
+                  <span
+                    className={`text-lg font-medium ${hoveredSector === sector ? "text-red-600" : "text-gray-800"}`}
+                  >
+                    {sector}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        {/* Bottom Section with vertical dividers extending from horizontal divider */}
-        <div className="relative">
-          {/* Vertical dividers that start from the horizontal line above */}
-          <div className="absolute top-0 left-1/3 w-px bg-gray-300" style={{ height: "calc(100% - 1px)" }}></div>
-          <div className="absolute top-0 left-2/3 w-px bg-gray-300" style={{ height: "calc(100% - 1px)" }}></div>
-
-          {/* Dynamic Categories */}
-          <div className="grid grid-cols-3 gap-0">
+          {/* Dynamic Categories - Mobile */}
+          <div className="space-y-6">
             {sectorContent[hoveredSector].categories.map((category, index) => (
-              <div
-                key={index}
-                className="p-8 hover:bg-gradient-to-bl hover:from-blue-50 hover:to-white transition-all duration-300 cursor-pointer hover:scale-105"
-              >
+              <div key={index} className="bg-gray-50 rounded-lg p-6">
                 <div className="space-y-4">
                   <h3 className="text-red-600 text-lg font-medium">{hoveredSector}</h3>
-                  <h4 className="text-red-600 text-2xl font-bold">{category.title}</h4>
-
-                  <div className="space-y-3">
+                  <h4 className="text-red-600 text-xl font-bold">{category.title}</h4>
+                  <div className="space-y-2">
                     {category.items.map((item, itemIndex) => (
                       <div key={itemIndex} className="text-gray-700 text-base">
                         {item}
@@ -251,6 +206,92 @@ export default function InvestmentSectors() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Desktop Layout - Keep existing */}
+        <div className="hidden md:block">
+          {/* Vertical divider connecting the two horizontal dividers */}
+          <div
+            className="absolute left-[80%] w-px bg-gray-300"
+            style={{ top: "-128px", height: "calc(82.5% - 24px)" }}
+          ></div>
+
+          {/* Top Section */}
+          <div className="grid grid-cols-2 gap-16 items-start mb-16">
+            {/* Left side - Title and Description */}
+            <div className="space-y-6">
+              <div className="flex items-center space-x-4 mb-8">
+                <Image
+                  src="/images/wireframe-funnel.png"
+                  alt="Wireframe funnel"
+                  width={80}
+                  height={120}
+                  className="opacity-80"
+                />
+              </div>
+
+              <h2 className="text-[#13325E] text-5xl font-black">Investment Sectors</h2>
+
+              <p className="text-gray-600 text-lg leading-relaxed">
+                We focus on the most promising innovation directions in the Web3 space and make deep investments in the
+                following tracks. Our thesis-driven approach combines rigorous due diligence with forward-looking market
+                analysis.
+              </p>
+            </div>
+
+            {/* Right side - Investment Focus Areas */}
+            <div className="flex justify-end">
+              <div className="space-y-6 text-left -ml-24">
+                <div className="space-y-8">
+                  {Object.keys(sectorContent).map((sector, index) => (
+                    <div
+                      key={sector}
+                      className={`flex items-center space-x-4 px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer ${
+                        hoveredSector === sector ? "bg-gradient-to-r from-blue-100 to-white" : ""
+                      } hover:bg-gradient-to-r hover:from-blue-100 hover:to-white`}
+                      onMouseEnter={() => setHoveredSector(sector)}
+                    >
+                      <div className={`w-3 h-3 rounded-full ${index === 0 ? "bg-red-600" : "bg-[#13325E]"}`}></div>
+                      <span className="text-gray-800 text-xl font-medium">{sector}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Gray Divider before bottom section - no margin bottom */}
+          <div className="w-full h-px bg-gray-300"></div>
+
+          {/* Bottom Section with vertical dividers extending from horizontal divider */}
+          <div className="relative">
+            {/* Vertical dividers that start from the horizontal line above */}
+            <div className="absolute top-0 left-1/3 w-px bg-gray-300" style={{ height: "calc(100% - 1px)" }}></div>
+            <div className="absolute top-0 left-2/3 w-px bg-gray-300" style={{ height: "calc(100% - 1px)" }}></div>
+
+            {/* Dynamic Categories */}
+            <div className="grid grid-cols-3 gap-0">
+              {sectorContent[hoveredSector].categories.map((category, index) => (
+                <div
+                  key={index}
+                  className="p-8 hover:bg-gradient-to-bl hover:from-blue-50 hover:to-white transition-all duration-300 cursor-pointer hover:scale-105"
+                >
+                  <div className="space-y-4">
+                    <h3 className="text-red-600 text-lg font-medium">{hoveredSector}</h3>
+                    <h4 className="text-red-600 text-2xl font-bold">{category.title}</h4>
+
+                    <div className="space-y-3">
+                      {category.items.map((item, itemIndex) => (
+                        <div key={itemIndex} className="text-gray-700 text-base">
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

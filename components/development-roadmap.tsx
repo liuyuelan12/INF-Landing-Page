@@ -192,7 +192,7 @@ export default function DevelopmentRoadmap() {
         <div className="w-full h-px bg-gray-300 mb-8"></div>
 
         {/* Roadmap Categories Grid with Vertical Dividers */}
-        <div className="relative">
+        <div className="relative hidden md:block">
           {/* Vertical dividers between columns */}
           <div className="absolute left-1/4 top-0 bottom-0 w-px bg-gray-300"></div>
           <div className="absolute left-2/4 top-0 bottom-0 w-px bg-gray-300"></div>
@@ -209,6 +209,32 @@ export default function DevelopmentRoadmap() {
                     </p>
                   ))}
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="block md:hidden">
+          {/* Roadmap Categories - Mobile Vertical Layout */}
+          <div className="space-y-8">
+            {roadmapPhases[activePhase].categories.map((category, index) => (
+              <div key={index}>
+                <div className="space-y-4">
+                  <h4 className="text-red-600 text-xl font-bold">{category.title}</h4>
+                  <div className="space-y-3">
+                    {category.items.map((item, itemIndex) => (
+                      <p key={itemIndex} className="text-gray-700 text-sm leading-relaxed pl-4 relative">
+                        <span className="absolute left-0 top-2 w-1 h-1 bg-gray-400 rounded-full"></span>
+                        {item}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+                {/* Gray divider between categories, but not after the last one */}
+                {index < roadmapPhases[activePhase].categories.length - 1 && (
+                  <div className="w-full h-px bg-gray-300 mt-8"></div>
+                )}
               </div>
             ))}
           </div>
