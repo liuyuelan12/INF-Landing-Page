@@ -155,19 +155,15 @@ export default function Footer() {
 
         {/* Mobile Layout */}
         <div className="block md:hidden space-y-8">
-          {/* Logo and Brand */}
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-              <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
-                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                </svg>
-              </div>
-            </div>
-            <div>
-              <div className="text-white text-lg font-semibold">Infinite</div>
-              <div className="text-white text-lg font-semibold">Alliance</div>
-            </div>
+          {/* Logo */}
+          <div className="flex items-center">
+            <Image
+              src="/images/group-51.png"
+              alt="Infinite Alliance Logo"
+              width={120}
+              height={120}
+              className="object-contain"
+            />
           </div>
 
           {/* Social Media Icons */}
