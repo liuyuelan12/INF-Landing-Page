@@ -11,7 +11,7 @@ export default function CoreTeam() {
     {
       name: "Sarah Chen",
       title: "Founding General Partner",
-      avatar: "/images/team-image-1.png",
+      avatar: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-O1LNWkGrKwzMh49xNBhDXmiFIT8rBk.png",
       description: [
         "MIT Ph.D. in Computer Science, Blockchain Research Focus",
         "Former Technology Executive at Point72 (5 years)",
@@ -23,7 +23,7 @@ export default function CoreTeam() {
     {
       name: "Michael Zhang",
       title: "Founding Managing Partner",
-      avatar: "/images/team-image-2.png",
+      avatar: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2-A2zLvtRXV3O5uF5TTKJNyZvqUp6i8N.png",
       description: [
         "Harvard Business School MBA, Baker Scholar",
         "Veteran Blockchain Investor (7+ Years in the Space)",
@@ -35,7 +35,7 @@ export default function CoreTeam() {
     {
       name: "Emily Wang",
       title: "Partner, Operations",
-      avatar: "/images/team-image-3.png",
+      avatar: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3-3C5ETjQ2AJUuU0Y4QjoZNjLoUrms4P.png",
       description: [
         "Stanford MBA, Global Market Operations Expert",
         "Former COO at BitMEX, Scaled Team from 20 to 200",
@@ -47,7 +47,7 @@ export default function CoreTeam() {
     {
       name: "David Liu",
       title: "Partner, Engineering",
-      avatar: "/images/team-image-4.png",
+      avatar: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/4-WXktRYCVHmVHgsCOc9dMOL7k4qkLKD.png",
       description: [
         "Former Google Senior Engineer (10+ Years)",
         "Blockchain Architecture Expert, 15+ Protocol Designs",

@@ -210,13 +210,7 @@ export default function InvestmentSectors() {
         </div>
 
         {/* Desktop Layout - Keep existing */}
-        <div className="hidden md:block">
-          {/* Vertical divider connecting the two horizontal dividers */}
-          <div
-            className="absolute left-[80%] w-px bg-gray-300"
-            style={{ top: "-128px", height: "calc(82.5% - 24px)" }}
-          ></div>
-
+        <div className="hidden md:block relative">
           {/* Top Section */}
           <div className="grid grid-cols-2 gap-16 items-start mb-16">
             {/* Left side - Title and Description */}
