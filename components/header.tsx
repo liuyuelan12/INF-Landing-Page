@@ -38,15 +38,33 @@ export default function Header() {
             <Link href="/" className="hover:text-blue-200 transition-colors">
               Home
             </Link>
-            <Link href="/roadmap" className="hover:text-blue-200 transition-colors">
+            <button
+              onClick={() => {
+                const element = document.getElementById("development-roadmap")
+                element?.scrollIntoView({ behavior: "smooth" })
+              }}
+              className="hover:text-blue-200 transition-colors"
+            >
               Roadmap
-            </Link>
-            <Link href="/core-team" className="hover:text-blue-200 transition-colors">
+            </button>
+            <button
+              onClick={() => {
+                const element = document.getElementById("core-team")
+                element?.scrollIntoView({ behavior: "smooth" })
+              }}
+              className="hover:text-blue-200 transition-colors"
+            >
               Core Team
-            </Link>
-            <Link href="/success-stories" className="hover:text-blue-200 transition-colors">
+            </button>
+            <button
+              onClick={() => {
+                const element = document.getElementById("success-stories")
+                element?.scrollIntoView({ behavior: "smooth" })
+              }}
+              className="hover:text-blue-200 transition-colors"
+            >
               Success Stories
-            </Link>
+            </button>
           </nav>
 
           {/* Desktop Right Side Actions */}
@@ -92,15 +110,36 @@ export default function Header() {
               <Link href="/" className="hover:text-blue-200 transition-colors py-2">
                 Home
               </Link>
-              <Link href="/roadmap" className="hover:text-blue-200 transition-colors py-2">
+              <button
+                onClick={() => {
+                  const element = document.getElementById("development-roadmap")
+                  element?.scrollIntoView({ behavior: "smooth" })
+                  setIsMobileMenuOpen(false)
+                }}
+                className="hover:text-blue-200 transition-colors py-2 text-left"
+              >
                 Roadmap
-              </Link>
-              <Link href="/core-team" className="hover:text-blue-200 transition-colors py-2">
+              </button>
+              <button
+                onClick={() => {
+                  const element = document.getElementById("core-team")
+                  element?.scrollIntoView({ behavior: "smooth" })
+                  setIsMobileMenuOpen(false)
+                }}
+                className="hover:text-blue-200 transition-colors py-2 text-left"
+              >
                 Core Team
-              </Link>
-              <Link href="/success-stories" className="hover:text-blue-200 transition-colors py-2">
+              </button>
+              <button
+                onClick={() => {
+                  const element = document.getElementById("success-stories")
+                  element?.scrollIntoView({ behavior: "smooth" })
+                  setIsMobileMenuOpen(false)
+                }}
+                className="hover:text-blue-200 transition-colors py-2 text-left"
+              >
                 Success Stories
-              </Link>
+              </button>
               <div className="flex items-center justify-between pt-4 border-t border-blue-700/30">
                 <div className="flex items-center space-x-1 cursor-pointer hover:text-blue-200">
                   <span className="text-sm">EN</span>

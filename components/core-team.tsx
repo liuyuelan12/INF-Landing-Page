@@ -66,7 +66,7 @@ export default function CoreTeam() {
   ]
 
   return (
-    <section className="relative pt-32 pb-96 md:pb-96 pb-16 bg-white" style={{ minHeight: "800px" }}>
+    <section id="core-team" className="relative pt-32 pb-96 md:pb-96 pb-16 bg-white" style={{ minHeight: "800px" }}>
       {/* Top Gray Divider */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gray-300"></div>
 

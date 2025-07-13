@@ -141,7 +141,7 @@ export default function DevelopmentRoadmap() {
   }
 
   return (
-    <section className="relative py-32">
+    <section id="development-roadmap" className="relative py-32">
       {/* Top Gray Divider */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gray-300"></div>
 

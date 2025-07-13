@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function SuccessStories() {
   return (
-    <section className="relative">
+    <section id="success-stories" className="relative">
       {/* Top Section with Red Background */}
       <div className="relative py-16">
         {/* Red Background Mask */}
