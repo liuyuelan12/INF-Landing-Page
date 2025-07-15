@@ -15,14 +15,17 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Brand */}
-          <div className="flex items-center space-x-4 md:space-x-8">
-            <Image
-              src="/images/logo.png"
-              alt="Infinite Alliance Logo"
-              width={150}
-              height={45}
-              className="rounded-full md:w-[200px] md:h-[60px]"
-            />
+          <div className="flex items-center space-x-3 md:space-x-8">
+            <div className="flex items-center space-x-3">
+              <Image
+                src="/images/infinite-alliance-logo.svg"
+                alt="Infinite Alliance Logo"
+                width={140}
+                height={42}
+                className="h-7 w-auto md:h-8"
+              />
+              <span className="text-white font-semibold text-sm sm:text-lg md:text-xl">Infinite Alliance</span>
+            </div>
             <Button
               variant="ghost"
               size="sm"

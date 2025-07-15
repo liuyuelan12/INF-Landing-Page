@@ -7,9 +7,10 @@ export default function CoreAdvantages() {
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
-    <section className="relative py-32 min-h-[900px] bg-gray-50">
+    <section className="relative py-8 md:py-32 min-h-[1200px] bg-gray-50">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      {/* Desktop Background Image */}
+      <div className="absolute inset-0 z-0 hidden md:block">
         <Image
           src="/images/section-background.png"
           alt="Core advantages background with wireframe sphere"
@@ -38,9 +39,9 @@ export default function CoreAdvantages() {
                 <h3 className="text-red-600 text-2xl font-bold">1. Professional Investment</h3>
                 <p className="text-gray-700 text-lg leading-relaxed">
                   Our investment philosophy is based on deep industry research and rigorous project selection, following
-                  best practices in venture capital due diligence (CB Insights, 2023). Through our multi-dimensional
-                  evaluation system, we accurately identify and capture the most promising investment opportunities in
-                  an evolving Web3 landscape (Web3 Global Report, 2025).
+                  best practices in venture capital due diligence. Through our multi-dimensional evaluation system, we
+                  accurately identify and capture the most promising investment opportunities in an evolving Web3
+                  landscape.
                 </p>
 
                 <div className="space-y-4">
@@ -50,7 +51,7 @@ export default function CoreAdvantages() {
                     <div>
                       <h5 className="text-gray-700 text-lg font-semibold">Web3 Innovation Focus</h5>
                       <ul className="text-gray-600 text-base ml-4 space-y-2 mt-2">
-                        <li>• AI and Web3 Integration (World Economic Forum, 2025)</li>
+                        <li>• AI and Web3 Integration</li>
                         <li>• Decentralized Finance</li>
                         <li>• Infrastructure Innovation</li>
                       </ul>
@@ -144,7 +145,7 @@ export default function CoreAdvantages() {
                 <p className="text-gray-700 text-lg leading-relaxed">
                   We adopt a decentralized governance model with our $IADAO token to ensure transparency, equitable
                   participation, and aligned incentives across our ecosystem, implementing best practices in DAO
-                  tokenomics (Placeholder VC, 2023) and governance structures (Aragon Project, 2023).
+                  tokenomics and governance structures.
                 </p>
 
                 <div className="space-y-4">
@@ -161,11 +162,9 @@ export default function CoreAdvantages() {
                   <div>
                     <h4 className="text-gray-800 text-xl font-bold">Multi-sig Treasury Management</h4>
                     <ul className="text-gray-600 text-base ml-4 space-y-2 mt-2">
-                      <li>
-                        • Fund Security Assurance through industry-standard protocols (Safe, formerly Gnosis Safe)
-                      </li>
+                      <li>• Fund Security Assurance through industry-standard protocols</li>
                       <li>• Transparent Fund Flow</li>
-                      <li>• Professional Audit Mechanism following Multi-sig Best Practices (2023)</li>
+                      <li>• Professional Audit Mechanism</li>
                     </ul>
                   </div>
 
@@ -256,7 +255,17 @@ export default function CoreAdvantages() {
 
         {/* Mobile Layout */}
         <div className="block md:hidden w-full">
-          <div className="w-full px-4">
+          {/* Mobile Background Image */}
+          <div className="absolute inset-0 z-0 md:hidden">
+            <Image
+              src="/images/core-advantages-mobile-bg.png"
+              alt="Core advantages mobile background with wireframe sphere"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="relative z-10 w-full px-4">
             <div className="space-y-8">
               <h2 className="text-red-600 text-3xl font-bold">Core Advantages</h2>
 
@@ -267,9 +276,9 @@ export default function CoreAdvantages() {
                   <h3 className="text-red-600 text-xl font-bold">1. Professional Investment</h3>
                   <p className="text-gray-700 text-base leading-relaxed">
                     Our investment philosophy is based on deep industry research and rigorous project selection,
-                    following best practices in venture capital due diligence (CB Insights, 2023). Through our
-                    multi-dimensional evaluation system, we accurately identify and capture the most promising
-                    investment opportunities in an evolving Web3 landscape (Web3 Global Report, 2025).
+                    following best practices in venture capital due diligence. Through our multi-dimensional evaluation
+                    system, we accurately identify and capture the most promising investment opportunities in an
+                    evolving Web3 landscape.
                   </p>
 
                   <div className="space-y-3">
@@ -279,7 +288,7 @@ export default function CoreAdvantages() {
                       <div>
                         <h5 className="text-gray-700 text-base font-semibold">Web3 Innovation Focus</h5>
                         <ul className="text-gray-600 text-sm ml-4 space-y-1 mt-1">
-                          <li>• AI and Web3 Integration (World Economic Forum, 2025)</li>
+                          <li>• AI and Web3 Integration</li>
                           <li>• Decentralized Finance</li>
                           <li>• Infrastructure Innovation</li>
                         </ul>
@@ -294,95 +303,91 @@ export default function CoreAdvantages() {
                         </ul>
                       </div>
 
-                      {isExpanded && (
-                        <>
-                          <div>
-                            <h5 className="text-gray-700 text-base font-semibold">Multi-dimensional Evaluation</h5>
-                            <ul className="text-gray-600 text-sm ml-4 space-y-1 mt-1">
-                              <li>• Technical Feasibility</li>
-                              <li>• Business Model Innovation</li>
-                              <li>• Team Capability Assessment</li>
-                              <li>• Market Competition Analysis</li>
-                            </ul>
-                          </div>
+                      <div>
+                        <h5 className="text-gray-700 text-base font-semibold">Multi-dimensional Evaluation</h5>
+                        <ul className="text-gray-600 text-sm ml-4 space-y-1 mt-1">
+                          <li>• Technical Feasibility</li>
+                          <li>• Business Model Innovation</li>
+                          <li>• Team Capability Assessment</li>
+                          <li>• Market Competition Analysis</li>
+                        </ul>
+                      </div>
 
-                          <div>
-                            <h5 className="text-gray-700 text-base font-semibold">Deep Value Mining</h5>
-                            <ul className="text-gray-600 text-sm ml-4 space-y-1 mt-1">
-                              <li>• Industry Trend Insights</li>
-                              <li>• Technology Development Path</li>
-                              <li>• Market Opportunity Capture</li>
-                            </ul>
-                          </div>
-                        </>
-                      )}
+                      <div>
+                        <h5 className="text-gray-700 text-base font-semibold">Deep Value Mining</h5>
+                        <ul className="text-gray-600 text-sm ml-4 space-y-1 mt-1">
+                          <li>• Industry Trend Insights</li>
+                          <li>• Technology Development Path</li>
+                          <li>• Market Opportunity Capture</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {isExpanded && (
-                  <>
-                    {/* 2. Strategic Incubation */}
-                    <div className="space-y-4">
-                      <h3 className="text-red-600 text-xl font-bold">2. Strategic Incubation</h3>
-                      <p className="text-gray-700 text-base leading-relaxed">
-                        We provide comprehensive project incubation services, from technical development to market
-                        expansion, helping projects achieve rapid growth.
-                      </p>
+                {/* 2. Strategic Incubation - Now shown initially */}
+                <div className="space-y-4">
+                  <h3 className="text-red-600 text-xl font-bold">2. Strategic Incubation</h3>
+                  <p className="text-gray-700 text-base leading-relaxed">
+                    We provide comprehensive project incubation services, from technical development to market
+                    expansion, helping projects achieve rapid growth.
+                  </p>
 
-                      <div className="space-y-3">
-                        <h4 className="text-gray-800 text-lg font-bold">Service System</h4>
+                  <div className="space-y-3">
+                    <h4 className="text-gray-800 text-lg font-bold">Service System</h4>
 
-                        <div className="space-y-3">
-                          <div>
-                            <h5 className="text-gray-700 text-base font-semibold">One-stop Incubation Services</h5>
-                            <ul className="text-gray-600 text-sm ml-4 space-y-1 mt-1">
-                              <li>• Technical Architecture Design</li>
-                              <li>• Product Roadmap Planning</li>
-                              <li>• Market Positioning Strategy</li>
-                            </ul>
-                          </div>
+                    <div className="space-y-3">
+                      <div>
+                        <h5 className="text-gray-700 text-base font-semibold">One-stop Incubation Services</h5>
+                        <ul className="text-gray-600 text-sm ml-4 space-y-1 mt-1">
+                          <li>• Technical Architecture Design</li>
+                          <li>• Product Roadmap Planning</li>
+                          <li>• Market Positioning Strategy</li>
+                        </ul>
+                      </div>
 
-                          <div>
-                            <h5 className="text-gray-700 text-base font-semibold">Comprehensive Resource Network</h5>
-                            <ul className="text-gray-600 text-sm ml-4 space-y-1 mt-1">
-                              <li>• Industry Expert Network</li>
-                              <li>• Technical Partners</li>
-                              <li>• Media Partner Resources</li>
-                            </ul>
-                          </div>
+                      <div>
+                        <h5 className="text-gray-700 text-base font-semibold">Comprehensive Resource Network</h5>
+                        <ul className="text-gray-600 text-sm ml-4 space-y-1 mt-1">
+                          <li>• Industry Expert Network</li>
+                          <li>• Technical Partners</li>
+                          <li>• Media Partner Resources</li>
+                        </ul>
+                      </div>
 
-                          <div>
-                            <h5 className="text-gray-700 text-base font-semibold">
-                              Professional Post-investment Management
-                            </h5>
-                            <ul className="text-gray-600 text-sm ml-4 space-y-1 mt-1">
-                              <li>• Operational Metrics Tracking</li>
-                              <li>• Growth Strategy Development</li>
-                              <li>• Risk Control Management</li>
-                            </ul>
-                          </div>
+                      <div>
+                        <h5 className="text-gray-700 text-base font-semibold">
+                          Professional Post-investment Management
+                        </h5>
+                        <ul className="text-gray-600 text-sm ml-4 space-y-1 mt-1">
+                          <li>• Operational Metrics Tracking</li>
+                          <li>• Growth Strategy Development</li>
+                          <li>• Risk Control Management</li>
+                        </ul>
+                      </div>
 
-                          <div>
-                            <h5 className="text-gray-700 text-base font-semibold">Brand Building Support</h5>
-                            <ul className="text-gray-600 text-sm ml-4 space-y-1 mt-1">
-                              <li>• Brand Positioning Planning</li>
-                              <li>• Content Marketing Strategy</li>
-                              <li>• Community Operations Support</li>
-                            </ul>
-                          </div>
-                        </div>
+                      <div>
+                        <h5 className="text-gray-700 text-base font-semibold">Brand Building Support</h5>
+                        <ul className="text-gray-600 text-sm ml-4 space-y-1 mt-1">
+                          <li>• Brand Positioning Planning</li>
+                          <li>• Content Marketing Strategy</li>
+                          <li>• Community Operations Support</li>
+                        </ul>
                       </div>
                     </div>
+                  </div>
+                </div>
 
+                {/* Keep sections 3 and 4 inside isExpanded condition */}
+                {isExpanded && (
+                  <>
                     {/* 3. DAO Governance & Token Utility */}
                     <div className="space-y-4">
                       <h3 className="text-red-600 text-xl font-bold">3. DAO Governance & Token Utility</h3>
                       <p className="text-gray-700 text-base leading-relaxed">
                         We adopt a decentralized governance model with our $IADAO token to ensure transparency,
                         equitable participation, and aligned incentives across our ecosystem, implementing best
-                        practices in DAO tokenomics (Placeholder VC, 2023) and governance structures (Aragon Project,
-                        2023).
+                        practices in DAO tokenomics and governance structures.
                       </p>
 
                       <div className="space-y-3">
@@ -399,11 +404,9 @@ export default function CoreAdvantages() {
                         <div>
                           <h4 className="text-gray-800 text-lg font-bold">Multi-sig Treasury Management</h4>
                           <ul className="text-gray-600 text-sm ml-4 space-y-1 mt-1">
-                            <li>
-                              • Fund Security Assurance through industry-standard protocols (Safe, formerly Gnosis Safe)
-                            </li>
+                            <li>• Fund Security Assurance through industry-standard protocols</li>
                             <li>• Transparent Fund Flow</li>
-                            <li>• Professional Audit Mechanism following Multi-sig Best Practices (2023)</li>
+                            <li>• Professional Audit Mechanism</li>
                           </ul>
                         </div>
 

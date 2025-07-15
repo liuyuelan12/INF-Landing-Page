@@ -17,8 +17,14 @@ export default function Footer() {
           <div className="grid grid-cols-3 gap-12 mb-12">
             {/* Logo and Social Media */}
             <div className="space-y-6">
-              <div className="flex items-center">
-                <Image src="/images/group-51.png" alt="Infinite Alliance Logo" width={160} height={160} />
+              <div className="flex items-center space-x-3">
+                <Image
+                  src="/images/infinite-alliance-logo-10.svg"
+                  alt="Infinite Alliance Logo"
+                  width={90}
+                  height={67}
+                />
+                <span className="text-white font-semibold text-lg">Infinite Alliance</span>
               </div>
 
               {/* Social Media Icons */}
@@ -156,14 +162,15 @@ export default function Footer() {
         {/* Mobile Layout */}
         <div className="block md:hidden space-y-8">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center space-x-3">
             <Image
-              src="/images/group-51.png"
+              src="/images/infinite-alliance-logo-10.svg"
               alt="Infinite Alliance Logo"
-              width={120}
-              height={120}
+              width={67}
+              height={50}
               className="object-contain"
             />
+            <span className="text-white font-semibold text-base">Infinite Alliance</span>
           </div>
 
           {/* Social Media Icons */}
