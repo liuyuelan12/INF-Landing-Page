@@ -1,8 +1,31 @@
+"use client"
+
 import Image from "next/image"
+import { useEffect, useState, useRef } from "react"
 
 export default function SuccessStories() {
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.2 },
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section id="success-stories" className="relative">
+    <section ref={sectionRef} id="success-stories" className="relative">
       {/* Top Section with Red Background */}
       <div className="relative py-16">
         {/* Red Background Mask */}
@@ -13,8 +36,20 @@ export default function SuccessStories() {
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4">
           <div className="text-white">
-            <h2 className="text-2xl font-light mb-4">Success Stories</h2>
-            <h3 className="text-4xl font-bold max-w-2xl">Hopper - Multi-chain Decentralized Trading Platform</h3>
+            <h2
+              className={`text-2xl font-light mb-4 transition-all duration-1000 ease-out ${
+                isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+              }`}
+            >
+              Success Stories
+            </h2>
+            <h3
+              className={`text-4xl font-bold max-w-2xl transition-all duration-1000 ease-out delay-300 ${
+                isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+              }`}
+            >
+              Hopper - Multi-chain Decentralized Trading Platform
+            </h3>
           </div>
         </div>
       </div>
@@ -34,7 +69,7 @@ export default function SuccessStories() {
                   alt="Conference presentation with large audience"
                   width={500}
                   height={350}
-                  className="rounded-lg w-full object-cover"
+                  className="rounded-lg w-full object-cover transition-all duration-500 ease-out transform hover:scale-105 hover:shadow-xl"
                 />
               </div>
 

@@ -95,10 +95,10 @@ export default function PartnersEcosystem() {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
+                  className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-500 ease-out transform hover:scale-105 ${
                     activeTab === tab
-                      ? "bg-white text-[#13325E]"
-                      : "bg-transparent border border-white/30 text-white hover:bg-white/10"
+                      ? "bg-white text-[#13325E] shadow-lg"
+                      : "bg-transparent border border-white/30 text-white hover:bg-white/10 hover:border-white/50"
                   }`}
                 >
                   {tab}
@@ -108,9 +108,16 @@ export default function PartnersEcosystem() {
           </div>
 
           {/* Partner Categories Grid */}
-          <div className="grid grid-cols-3 gap-12">
+          <div
+            className={`grid grid-cols-3 gap-12 transition-all duration-700 ease-out ${
+              activeTab ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
             {partnerCategories[activeTab].map((category, index) => (
-              <div key={index} className="space-y-6">
+              <div
+                key={index}
+                className="space-y-6 transition-all duration-300 ease-out transform hover:scale-105 hover:bg-white/5 rounded-lg p-4 hover:shadow-lg"
+              >
                 <h3 className="text-white text-2xl font-bold">{category.title}</h3>
                 <div className="space-y-3">
                   {category.items.map((item, itemIndex) => (

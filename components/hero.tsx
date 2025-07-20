@@ -1,7 +1,16 @@
+"use client"
+
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { useEffect, useState } from "react"
 
 export default function Hero() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
   return (
     <section className="relative min-h-[600px] md:min-h-[800px] lg:min-h-[1000px] flex items-center">
       {/* Background Image */}
@@ -20,7 +29,11 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center lg:items-end min-h-[600px] md:min-h-[800px] lg:min-h-[1000px] pb-12 md:pb-24 lg:pb-48">
         {/* Left Content - Moved down on mobile and tablet */}
-        <div className="max-w-2xl text-center lg:text-left mt-20 sm:mt-32 md:mt-40 lg:mt-0">
+        <div
+          className={`max-w-2xl text-center lg:text-left mt-20 sm:mt-32 md:mt-40 lg:mt-0 transition-all duration-1000 ease-out ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <h1
             className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight mb-4"
             style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5), 1px 1px 2px rgba(0,0,0,0.3)" }}
@@ -53,7 +66,11 @@ export default function Hero() {
         </div>
 
         {/* Right Content - Hidden on mobile and tablet */}
-        <div className="hidden lg:flex flex-col items-end text-sm text-white/80 mt-8 lg:mt-0">
+        <div
+          className={`hidden lg:flex flex-col items-end text-sm text-white/80 mt-8 lg:mt-0 transition-all duration-1000 ease-out delay-500 ${
+            isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"
+          }`}
+        >
           <span className="hover:text-white cursor-pointer transition-colors mb-1">Join Investor Network</span>
           <span className="text-white/60">|</span>
           <span className="hover:text-white cursor-pointer transition-colors mt-1">View Research Reports</span>

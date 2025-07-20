@@ -1,59 +1,83 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
 export default function CoreTeam() {
   const [hoveredMember, setHoveredMember] = useState<number>(0) // Default to Sarah Chen (index 0) for desktop
   const [selectedMember, setSelectedMember] = useState<number>(0) // For mobile click interaction
 
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.2 },
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   const teamMembers = [
     {
-      name: "Sarah Chen",
-      title: "Founding General Partner",
+      name: "Mr. Soul",
+      title: "Founding Partner & Chief Architect",
       avatar: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-O1LNWkGrKwzMh49xNBhDXmiFIT8rBk.png",
       description: [
-        "MIT Ph.D. in Computer Science, Blockchain Research Focus",
-        "Former Technology Executive at Point72 (5 years)",
-        "Morgan Stanley Technology Director, Led AI Integration Team",
-        "Board Member, Blockchain Enterprise Alliance",
-        "Led 3 Successful Tech Startups with 2 Exits",
+        "True 'kingmaker' in the blockchain universe with a Midas touch",
+        "Legendary track record of catapulting three exchanges to global prominence",
+        "Led one exchange to dethrone Binance and claim #1 spot in trading volume in 90 days",
+        "Master of growth and architect of ecosystems",
+        "Cultivated a network of millions of loyal users across incubated projects",
+        "Channels unparalleled industry insight to identify and mentor visionaries",
       ],
     },
     {
-      name: "Michael Zhang",
-      title: "Founding Managing Partner",
+      name: "Thomas Cheung",
+      title: "Partner & Ecosystem Builder",
       avatar: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2-A2zLvtRXV3O5uF5TTKJNyZvqUp6i8N.png",
       description: [
-        "Harvard Business School MBA, Baker Scholar",
-        "Veteran Blockchain Investor (7+ Years in the Space)",
-        "Led $450M in Web3 Investments at Galaxy Digital",
-        "Serial Web3 Entrepreneur with Solana Ecosystem Focus",
-        "Advisor to Three Unicorn Blockchain Projects",
+        "Master 'connector' at the highest echelons of Web3",
+        "Commercial brain of T-Fund Labs and core driver of TON Society",
+        "Excels at weaving powerful networks of strategic alliances",
+        "Constructs value-driven ecosystems built for resilience and explosive growth",
+        "Doctor of Business Administration from National University of Singapore",
+        "Rigorous framework for dissecting market fundamentals and designing sustainable growth models",
       ],
     },
     {
-      name: "Emily Wang",
-      title: "Partner, Operations",
+      name: "Eric Man-lok Chiew",
+      title: "Partner & Chief Growth Strategist",
       avatar: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3-3C5ETjQ2AJUuU0Y4QjoZNjLoUrms4P.png",
       description: [
-        "Stanford MBA, Global Market Operations Expert",
-        "Former COO at BitMEX, Scaled Team from 20 to 200",
-        "Extensive Crypto Industry Experience (8+ Years)",
-        "Community Building Specialist with 500K+ Network",
-        "Led Regulatory Compliance for Major Exchanges",
+        "Grandmaster of growth hacking with distinguished tenures at Bitget and Huobi",
+        "Orchestrated textbook-defining marketing campaigns capturing millions of users",
+        "Understands the art of traffic and science of human behavior",
+        "Always finds the shortest path to market dominance",
+        "DBA from University of Hong Kong provides strategic altitude",
+        "Hands-on experience at CyberConnect gives uncanny tactical instinct",
       ],
     },
     {
-      name: "David Liu",
-      title: "Partner, Engineering",
+      name: "Kevin Lee",
+      title: "Partner & Brand Philosopher",
       avatar: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/4-WXktRYCVHmVHgsCOc9dMOL7k4qkLKD.png",
       description: [
-        "Former Google Senior Engineer (10+ Years)",
-        "Blockchain Architecture Expert, 15+ Protocol Designs",
-        "Open Source Project Contributor (Ethereum, Polkadot)",
-        "Smart Contract Security Researcher",
-        'Author of "Zero Knowledge Proofs in DeFi Infrastructure"',
+        "Perfect synthesis of technology and narrative",
+        "Ph.D. in Engineering from HKUST, understands technology from first principles",
+        "Premier brand strategist who crafted digital identities at MC Markets",
+        "Rare talent of translating complex technical cores into compelling narratives",
+        "Responsible for unearthing the unique soul of each project",
+        "Forges projects into the brightest stars in the industry",
       ],
     },
   ]
@@ -66,7 +90,12 @@ export default function CoreTeam() {
   ]
 
   return (
-    <section id="core-team" className="relative pt-32 pb-96 md:pb-96 pb-16 bg-white" style={{ minHeight: "800px" }}>
+    <section
+      ref={sectionRef}
+      id="core-team"
+      className="relative pt-16 pb-80 md:pb-96 bg-white"
+      style={{ minHeight: "1000px" }}
+    >
       {/* Top Gray Divider */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gray-300"></div>
 
@@ -96,7 +125,7 @@ export default function CoreTeam() {
         {/* Desktop Layout */}
         <div className="hidden md:block">
           {/* Header Section */}
-          <div className="mb-16">
+          <div className="mb-8">
             <div className="flex items-center space-x-4 mb-6">
               <Image
                 src="/images/group-216.png"
@@ -121,13 +150,16 @@ export default function CoreTeam() {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="space-y-4 relative"
+                className={`space-y-4 relative transition-all duration-700 ease-out transform hover:scale-105 ${
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
+                style={{ transitionDelay: `${index * 150}ms` }}
                 onMouseEnter={() => setHoveredMember(index)}
-                onMouseLeave={() => setHoveredMember(0)} // Return to Sarah Chen when not hovering
+                onMouseLeave={() => setHoveredMember(0)}
               >
                 {/* Avatar */}
                 <div className="relative">
-                  <div className="w-32 h-32 mx-auto border-2 border-[#13325E] rounded-lg overflow-hidden">
+                  <div className="w-32 h-32 mx-auto border-2 border-[#13325E] rounded-lg overflow-hidden transition-all duration-300 hover:border-red-600 hover:shadow-lg transform hover:scale-105">
                     <Image
                       src={member.avatar || "/placeholder.svg"}
                       alt={`${member.name} avatar`}
@@ -203,7 +235,7 @@ export default function CoreTeam() {
         {/* Mobile Layout */}
         <div className="block md:hidden">
           {/* Header Section */}
-          <div className="mb-8">
+          <div className="mb-6">
             <div className="flex items-start space-x-4 mb-6">
               <Image
                 src="/images/group-216.png"

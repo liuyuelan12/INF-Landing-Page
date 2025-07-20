@@ -1,8 +1,30 @@
+"use client"
+
 import Image from "next/image"
+import { useEffect, useState, useRef } from "react"
 
 export default function Stats() {
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.3 },
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
   return (
-    <section className="relative py-10 md:py-20">
+    <section ref={sectionRef} className="relative py-10 md:py-20">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image src="/images/mask-group-17.png" alt="Stats background" fill className="object-cover" />
@@ -27,7 +49,12 @@ export default function Stats() {
             {/* Stats Row */}
             <div className="grid grid-cols-1 gap-6">
               {/* AUM Stat */}
-              <div className="text-white flex items-center justify-center p-6 bg-black/20 rounded-lg">
+              <div
+                className={`text-white flex items-center justify-center p-6 bg-black/20 rounded-lg transition-all duration-700 ease-out ${
+                  isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
+                }`}
+                style={{ transitionDelay: "200ms" }}
+              >
                 <div className="flex items-center space-x-4">
                   <Image src="/images/aum.png" alt="AUM Icon" width={60} height={60} className="opacity-80" />
                   <div>
@@ -38,7 +65,12 @@ export default function Stats() {
               </div>
 
               {/* Portfolio Projects Stat */}
-              <div className="relative text-white flex items-center justify-center p-6 bg-black/20 rounded-lg">
+              <div
+                className={`relative text-white flex items-center justify-center p-6 bg-black/20 rounded-lg transition-all duration-700 ease-out ${
+                  isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
+                }`}
+                style={{ transitionDelay: "300ms" }}
+              >
                 <div
                   className="absolute inset-0 opacity-80 rounded-lg"
                   style={{
@@ -61,7 +93,12 @@ export default function Stats() {
               </div>
 
               {/* Successful Exits Stat */}
-              <div className="text-white flex items-center justify-center p-6 bg-black/20 rounded-lg">
+              <div
+                className={`text-white flex items-center justify-center p-6 bg-black/20 rounded-lg transition-all duration-700 ease-out ${
+                  isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
+                }`}
+                style={{ transitionDelay: "500ms" }}
+              >
                 <div className="flex items-center space-x-4">
                   <Image
                     src="/images/successful-exit.png"

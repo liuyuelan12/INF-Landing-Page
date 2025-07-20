@@ -166,10 +166,10 @@ export default function DevelopmentRoadmap() {
               <button
                 key={phase}
                 onClick={() => setActivePhase(phase)}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-500 ease-out transform hover:scale-105 ${
                   activePhase === phase
-                    ? "bg-[#13325E] text-white"
-                    : "bg-transparent border border-[#13325E] text-[#13325E] hover:bg-[#13325E]/10"
+                    ? "bg-[#13325E] text-white shadow-lg"
+                    : "bg-transparent border border-[#13325E] text-[#13325E] hover:bg-[#13325E]/10 hover:shadow-md"
                 }`}
               >
                 {phase}
@@ -198,9 +198,16 @@ export default function DevelopmentRoadmap() {
           <div className="absolute left-2/4 top-0 bottom-0 w-px bg-gray-300"></div>
           <div className="absolute left-3/4 top-0 bottom-0 w-px bg-gray-300"></div>
 
-          <div className="grid grid-cols-4 gap-8">
+          <div
+            className={`grid grid-cols-4 gap-8 transition-all duration-700 ease-out ${
+              activePhase ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
             {roadmapPhases[activePhase].categories.map((category, index) => (
-              <div key={index} className="space-y-4 px-4">
+              <div
+                key={index}
+                className="space-y-4 px-4 transition-all duration-300 ease-out transform hover:scale-105 hover:bg-gray-50 rounded-lg p-4 hover:shadow-md"
+              >
                 <h4 className="text-red-600 text-lg font-bold">{category.title}</h4>
                 <div className="space-y-3">
                   {category.items.map((item, itemIndex) => (

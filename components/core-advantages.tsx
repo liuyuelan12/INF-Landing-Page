@@ -1,13 +1,32 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
 export default function CoreAdvantages() {
   const [isExpanded, setIsExpanded] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.1 },
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <section className="relative py-8 md:py-32 min-h-[1200px] bg-gray-50">
+    <section ref={sectionRef} className="relative py-8 md:py-32 min-h-[1200px] bg-gray-50">
       {/* Background Image */}
       {/* Desktop Background Image */}
       <div className="absolute inset-0 z-0 hidden md:block">
@@ -32,7 +51,13 @@ export default function CoreAdvantages() {
             style={{ scrollbarWidth: "thin", scrollbarColor: "#cbd5e1 transparent" }}
           >
             <div className="space-y-10">
-              <h2 className="text-red-600 text-4xl font-bold">Core Advantages</h2>
+              <h2
+                className={`text-red-600 text-4xl font-bold transition-all duration-1000 ease-out ${
+                  isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+                }`}
+              >
+                Core Advantages
+              </h2>
 
               {/* 1. Professional Investment */}
               <div className="space-y-5">
@@ -498,7 +523,7 @@ export default function CoreAdvantages() {
                 <div className="flex justify-start pt-4">
                   <button
                     onClick={() => setIsExpanded(!isExpanded)}
-                    className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition-colors duration-300 flex items-center space-x-2"
+                    className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-500 ease-out flex items-center space-x-2 transform hover:scale-105 hover:shadow-lg active:scale-95"
                   >
                     <span>{isExpanded ? "Show Less" : "Read More"}</span>
                     <svg

@@ -24,10 +24,16 @@ export default function Footer() {
 
             {/* Social Media Icons */}
             <div className="flex gap-4">
-              <Link href="#" className="text-white hover:text-gray-300 transition-colors">
+              <Link
+                href="#"
+                className="text-white hover:text-gray-300 transition-all duration-300 ease-out transform hover:scale-125 hover:rotate-12"
+              >
                 <X size={20} />
               </Link>
-              <Link href="#" className="text-white hover:text-gray-300 transition-colors">
+              <Link
+                href="#"
+                className="text-white hover:text-gray-300 transition-all duration-300 ease-out transform hover:scale-125 hover:-rotate-12"
+              >
                 <Globe size={20} />
               </Link>
             </div>
@@ -40,32 +46,50 @@ export default function Footer() {
               <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
               <ul className="space-y-3 text-sm text-gray-300">
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+                  >
                     Weekly Industry Insights
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+                  >
                     Investment Strategy Sharing
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+                  >
                     Project Updates
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+                  >
                     Event Announcements
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+                  >
                     Governance Proposals
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+                  >
                     Market Research Reports
                   </Link>
                 </li>
@@ -77,27 +101,42 @@ export default function Footer() {
               <h3 className="text-lg font-semibold mb-4">Contact us</h3>
               <ul className="space-y-3 text-sm text-gray-300">
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+                  >
                     Business Cooperation
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+                  >
                     Project Submission
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+                  >
                     Media Inquiries
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+                  >
                     Investor Relations
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+                  >
                     Careers
                   </Link>
                 </li>
@@ -110,34 +149,64 @@ export default function Footer() {
         <div className="border-t border-gray-600 mt-12 pt-8">
           {/* Navigation Links */}
           <div className="flex flex-wrap gap-6 mb-6 text-sm">
-            <Link href="#" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="#"
+              className="text-gray-300 hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+            >
               About Us
             </Link>
-            <Link href="#" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="#"
+              className="text-gray-300 hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+            >
               Join Us
             </Link>
-            <Link href="#" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="#"
+              className="text-gray-300 hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+            >
               News Center
             </Link>
-            <Link href="#" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="#"
+              className="text-gray-300 hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+            >
               Research Publications
             </Link>
-            <Link href="#" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="#"
+              className="text-gray-300 hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+            >
               Events & Webinars
             </Link>
-            <Link href="#" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="#"
+              className="text-gray-300 hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+            >
               Portfolio
             </Link>
-            <Link href="#" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="#"
+              className="text-gray-300 hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+            >
               FAQ
             </Link>
-            <Link href="#" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="#"
+              className="text-gray-300 hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+            >
               Terms of Service
             </Link>
-            <Link href="#" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="#"
+              className="text-gray-300 hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+            >
               Privacy Policy
             </Link>
-            <Link href="#" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="#"
+              className="text-gray-300 hover:text-white transition-all duration-300 ease-out transform hover:translate-x-1"
+            >
               Disclaimer
             </Link>
           </div>

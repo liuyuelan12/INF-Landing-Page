@@ -55,12 +55,11 @@ export default function Intro() {
             </p>
 
             <p className="text-lg leading-relaxed">
-              Founded in 2025 and structured as a Wyoming DAO LLC under Title 17, Chapter 31 of Wyoming Statutes
-              (Wyoming Statutes, 2021), we combine traditional venture expertise with Web3-native governance and
-              incentive mechanisms. Our mission is to become the Silicon Valley flagship for Web3 incubation, fostering
-              the next generation of breakthrough blockchain technologies and companies, inspired by the Y Combinator
-              model that has successfully incubated over 4,000 companies with a combined valuation approaching $1
-              trillion (Y Combinator, 2023).
+              Founded in 2025 and structured as a Wyoming DAO LLC under Title 17, Chapter 31 of Wyoming Statutes, we
+              combine traditional venture expertise with Web3-native governance and incentive mechanisms. Our mission is
+              to become the Silicon Valley flagship for Web3 incubation, fostering the next generation of breakthrough
+              blockchain technologies and companies, inspired by the Y Combinator model that has successfully incubated
+              over 4,000 companies with a combined valuation approaching $1 trillion.
             </p>
           </div>
         </div>

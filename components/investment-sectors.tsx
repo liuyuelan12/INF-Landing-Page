@@ -1,10 +1,29 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
 export default function InvestmentSectors() {
   const [hoveredSector, setHoveredSector] = useState("AI + Web3")
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.2 },
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   const sectorContent = {
     "AI + Web3": {
@@ -138,7 +157,7 @@ export default function InvestmentSectors() {
   }
 
   return (
-    <section className="relative py-16 md:py-32 min-h-[900px] bg-white">
+    <section ref={sectionRef} className="relative py-16 md:py-32 min-h-[900px] bg-white">
       {/* Gray Divider */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gray-300"></div>
 
@@ -241,9 +260,9 @@ export default function InvestmentSectors() {
                   {Object.keys(sectorContent).map((sector, index) => (
                     <div
                       key={sector}
-                      className={`flex items-center space-x-4 px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer ${
-                        hoveredSector === sector ? "bg-gradient-to-r from-blue-100 to-white" : ""
-                      } hover:bg-gradient-to-r hover:from-blue-100 hover:to-white`}
+                      className={`flex items-center space-x-4 px-4 py-2 rounded-lg transition-all duration-500 ease-out cursor-pointer transform hover:scale-105 ${
+                        hoveredSector === sector ? "bg-gradient-to-r from-blue-100 to-white shadow-lg" : ""
+                      } hover:bg-gradient-to-r hover:from-blue-100 hover:to-white hover:shadow-md`}
                       onMouseEnter={() => setHoveredSector(sector)}
                     >
                       <div className={`w-3 h-3 rounded-full ${index === 0 ? "bg-red-600" : "bg-[#13325E]"}`}></div>
@@ -269,7 +288,7 @@ export default function InvestmentSectors() {
               {sectorContent[hoveredSector].categories.map((category, index) => (
                 <div
                   key={index}
-                  className="p-8 hover:bg-gradient-to-bl hover:from-blue-50 hover:to-white transition-all duration-300 cursor-pointer hover:scale-105"
+                  className="p-8 hover:bg-gradient-to-bl hover:from-blue-50 hover:to-white transition-all duration-500 cursor-pointer hover:scale-105 hover:shadow-lg transform"
                 >
                   <div className="space-y-4">
                     <h3 className="text-red-600 text-lg font-medium">{hoveredSector}</h3>

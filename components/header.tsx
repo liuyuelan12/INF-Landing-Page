@@ -4,14 +4,23 @@ import Image from "next/image"
 import Link from "next/link"
 import { Search, ChevronDown, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isHeaderVisible, setIsHeaderVisible] = useState(false)
+
+  useEffect(() => {
+    setIsHeaderVisible(true)
+  }, [])
 
   return (
-    <header className="bg-[#13325E] text-white relative">
+    <header
+      className={`bg-[#13325E] text-white relative transition-all duration-1000 ease-out ${
+        isHeaderVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Brand */}
@@ -38,7 +47,10 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <Link href="/" className="hover:text-blue-200 transition-colors">
+            <Link
+              href="/"
+              className="hover:text-blue-200 transition-all duration-300 ease-out transform hover:scale-105"
+            >
               Home
             </Link>
             <button
@@ -46,7 +58,7 @@ export default function Header() {
                 const element = document.getElementById("development-roadmap")
                 element?.scrollIntoView({ behavior: "smooth" })
               }}
-              className="hover:text-blue-200 transition-colors"
+              className="hover:text-blue-200 transition-all duration-300 ease-out transform hover:scale-105"
             >
               Roadmap
             </button>
@@ -55,7 +67,7 @@ export default function Header() {
                 const element = document.getElementById("core-team")
                 element?.scrollIntoView({ behavior: "smooth" })
               }}
-              className="hover:text-blue-200 transition-colors"
+              className="hover:text-blue-200 transition-all duration-300 ease-out transform hover:scale-105"
             >
               Core Team
             </button>
@@ -64,7 +76,7 @@ export default function Header() {
                 const element = document.getElementById("success-stories")
                 element?.scrollIntoView({ behavior: "smooth" })
               }}
-              className="hover:text-blue-200 transition-colors"
+              className="hover:text-blue-200 transition-all duration-300 ease-out transform hover:scale-105"
             >
               Success Stories
             </button>
@@ -79,7 +91,7 @@ export default function Header() {
             <Button
               variant="outline"
               size="sm"
-              className="text-white border-white hover:bg-white hover:text-blue-900 bg-transparent"
+              className="text-white border-white hover:bg-white hover:text-blue-900 bg-transparent transition-all duration-300 ease-out transform hover:scale-105 hover:shadow-lg"
             >
               Login
             </Button>
