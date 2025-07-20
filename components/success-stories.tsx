@@ -69,7 +69,9 @@ export default function SuccessStories() {
                   alt="Conference presentation with large audience"
                   width={500}
                   height={350}
-                  className="rounded-lg w-full object-cover transition-all duration-500 ease-out transform hover:scale-105 hover:shadow-xl"
+                  className={`rounded-lg w-full object-cover transition-all duration-700 ease-out transform hover:scale-105 hover:shadow-xl ${
+                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
                 />
               </div>
 
@@ -79,73 +81,75 @@ export default function SuccessStories() {
                   alt="Conference audience listening to speaker"
                   width={500}
                   height={350}
-                  className="rounded-lg w-full object-cover"
+                  className={`rounded-lg w-full object-cover transition-all duration-700 ease-out delay-300 transform hover:scale-105 hover:shadow-xl ${
+                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
                 />
               </div>
             </div>
 
             {/* Right Side - Content split into two equal parts */}
-            <div className="flex flex-col h-full md:block hidden">
-              {/* Investment Results Section - Top Half */}
-              <div className="flex-1 flex flex-col justify-center space-y-6 py-8">
-                <div className="space-y-4">
-                  <Image
-                    src="/images/globe-wireframe.png"
-                    alt="Globe wireframe icon"
-                    width={60}
-                    height={60}
-                    className="object-contain"
-                  />
-                  <h4 className="text-red-600 text-2xl font-bold">Investment Results</h4>
+            <div className="md:block hidden h-full">
+              <div className="h-full flex flex-col">
+                {/* Investment Results Section - Exactly 50% height */}
+                <div className="flex-1 flex flex-col justify-center px-6">
+                  <div
+                    className={`space-y-6 transition-all duration-700 ease-out delay-500 ${
+                      isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+                    }`}
+                  >
+                    <div className="space-y-4">
+                      <Image
+                        src="/images/globe-wireframe.png"
+                        alt="Globe wireframe icon"
+                        width={60}
+                        height={60}
+                        className="object-contain"
+                      />
+                      <h4 className="text-red-600 text-2xl font-bold">Investment Results</h4>
+                    </div>
+
+                    <div className="space-y-4 text-gray-700">
+                      <p className="text-lg">Successfully raised $1.7 million in seed funding</p>
+                      <p className="text-lg">Solid initial capital supporting project development</p>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="space-y-4 text-gray-700">
-                  <p className="text-lg">Successfully raised $1.7 million in seed funding</p>
-                  <p className="text-lg">Solid initial capital supporting project development</p>
-                </div>
-              </div>
+                {/* Horizontal Divider - Perfectly centered */}
+                <div className="w-full h-px bg-gray-300 flex-shrink-0"></div>
 
-              {/* Horizontal Divider */}
-              <div className="w-full h-px bg-gray-300"></div>
+                {/* Project Highlights Section - Exactly 50% height */}
+                <div className="flex-1 flex flex-col justify-center px-6">
+                  <div
+                    className={`space-y-6 transition-all duration-700 ease-out delay-700 ${
+                      isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+                    }`}
+                  >
+                    <div className="space-y-4">
+                      <Image
+                        src="/images/red-oval-design.png"
+                        alt="Red oval design icon"
+                        width={60}
+                        height={60}
+                        className="object-contain"
+                      />
+                      <h4 className="text-red-600 text-2xl font-bold">Project Highlights</h4>
+                    </div>
 
-              {/* Project Highlights Section - Bottom Half */}
-              <div className="flex-1 flex flex-col justify-center space-y-6 py-8">
-                <div className="space-y-4">
-                  <Image
-                    src="/images/red-oval-design.png"
-                    alt="Red oval design icon"
-                    width={60}
-                    height={60}
-                    className="object-contain"
-                  />
-                  <h4 className="text-red-600 text-2xl font-bold">Project Highlights</h4>
-                </div>
-
-                <div className="space-y-4 text-gray-700">
-                  <p className="text-lg">Advanced MPC Wallet Technology with 99.99% Security Score</p>
-                  <p className="text-lg">AI Model Marketplaces</p>
-                  <p className="text-lg">Privacy-Preserving Machine Learning</p>
-                  <p className="text-lg">Federated Learning Networks</p>
+                    <div className="space-y-4 text-gray-700">
+                      <p className="text-lg">Advanced MPC Wallet Technology with 99.99% Security Score</p>
+                      <p className="text-lg">AI Model Marketplaces</p>
+                      <p className="text-lg">Privacy-Preserving Machine Learning</p>
+                      <p className="text-lg">Federated Learning Networks</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Mobile Layout - Full Width */}
             <div className="block md:hidden col-span-2">
-              {/* Remove this entire red header section since it's already shown above */}
-              {/* 
-              <div className="bg-red-600 text-white p-6 -mx-4 mb-6">
-                <h2 className="text-xl font-light mb-4">Success Stories</h2>
-                <h3 className="text-2xl font-bold leading-tight">
-                  Hopper - Multi-chain
-                  <br />
-                  Decentralized
-                  <br />
-                  Trading Platform
-                </h3>
-              </div>
-              */}
-
               {/* Conference Photo - Full Width */}
               <div className="mb-8 -mx-4 px-4">
                 <div className="relative">
@@ -154,7 +158,7 @@ export default function SuccessStories() {
                     alt="Conference presentation with large audience"
                     width={500}
                     height={300}
-                    className="w-full object-cover"
+                    className="w-full object-cover rounded-lg"
                   />
                 </div>
               </div>
@@ -178,6 +182,9 @@ export default function SuccessStories() {
                   </div>
                 </div>
               </div>
+
+              {/* Divider for mobile */}
+              <div className="w-full h-px bg-gray-300 mb-8"></div>
 
               {/* Project Highlights Section */}
               <div className="mb-8">
