@@ -4,6 +4,7 @@ import Stats from "@/components/stats"
 import Intro from "@/components/intro"
 import CoreAdvantages from "@/components/core-advantages"
 import InvestmentSectors from "@/components/investment-sectors"
+import InvestmentPortfolio from "@/components/investment-portfolio"
 import SuccessStories from "@/components/success-stories"
 import CoreTeam from "@/components/core-team"
 import PartnersEcosystem from "@/components/partners-ecosystem"
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Intro />
       <CoreAdvantages />
       <InvestmentSectors />
+      <InvestmentPortfolio />
       <SuccessStories />
       <CoreTeam />
       <PartnersEcosystem />
